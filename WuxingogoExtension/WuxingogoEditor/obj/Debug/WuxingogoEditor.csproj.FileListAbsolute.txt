@@ -1,0 +1,5 @@
+E:\Work\Wuxingogo\OutPutDll\WuxingogoEditor.dll
+E:\Work\Wuxingogo\OutPutDll\WuxingogoEditor.pdb
+E:\Work\Wuxingogo\WuxingogoEditor\obj\Debug\WuxingogoEditor.csprojResolveAssemblyReference.cache
+E:\Work\Wuxingogo\WuxingogoEditor\obj\Debug\WuxingogoEditor.dll
+E:\Work\Wuxingogo\WuxingogoEditor\obj\Debug\WuxingogoEditor.pdb

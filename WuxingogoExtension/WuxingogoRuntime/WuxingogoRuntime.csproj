@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B02B3AE4-0D8E-4A97-817D-3566203C38B3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>XRuntime</RootNamespace>
+    <AssemblyName>WuxingogoRuntime</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>..\OutPutDll\</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>..\OutPutDll\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="AfterBuild" />
+      </CustomCommands>
+    </CustomCommands>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>true</DelaySign>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\OutPutDll\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>..\OutPutDll\UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Runtime\XMonoBehaviour.cs" />
+    <Compile Include="Runtime\XReflectionManager.cs" />
+    <Compile Include="Tools\GameObjectUtilities.cs" />
+    <Compile Include="Tools\XLogger.cs" />
+    <Compile Include="Tools\SingletonClass.cs" />
+    <Compile Include="Attribute\DisableAttribute.cs" />
+    <Compile Include="Attribute\XAttribute.cs" />
+    <Compile Include="Attribute\XSerializeAttribute.cs" />
+    <Compile Include="Runtime\XScriptableObject.cs" />
+    <Compile Include="Tools\SerializeUtils.cs" />
+    <Compile Include="Tools\UnityDictionary.cs" />
+    <Compile Include="Tools\StringUtils.cs" />
+    <Compile Include="Tools\XReflectionUtils.cs" />
+    <Compile Include="Tools\XRegexTools.cs" />
+    <Compile Include="Attribute\EnumFlagAttribute.cs" />
+    <Compile Include="Attribute\XClassAttribute.cs" />
+    <Compile Include="Attribute\XFieldAttribute.cs" />
+    <Compile Include="Attribute\XMethodAttribute.cs" />
+    <Compile Include="Attribute\XPropertyAttribute.cs" />
+    <Compile Include="Tools\SectorShape.cs" />
+    <Compile Include="Tools\ShowFPS.cs" />
+    <Compile Include="Tools\MathOp.cs" />
+    <Compile Include="Attribute\DisableExpresionAttribute.cs" />
+    <Compile Include="Attribute\XObjectAttribute.cs" />
+    <Compile Include="Tools\GameManager.cs" />
+    <Compile Include="Tools\XFileUtils.cs" />
+    <Compile Include="Tools\AsynchronousFunc.cs" />
+    <Compile Include="Tools\DelegateUtils.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup />
+  <PropertyGroup>
+    <!---<PostBuildEvent>xcopy $(TargetPath) $(SolutionDir)WuxingogoExtension\Runtime\ /Y
+</PostBuildEvent>-->
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>
