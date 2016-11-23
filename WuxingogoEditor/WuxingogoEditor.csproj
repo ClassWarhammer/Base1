@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D2C63C42-C455-4F1B-944F-17CD39D2F2A7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>WuxingogoEditor</RootNamespace>
+    <AssemblyName>WuxingogoEditor</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>..\OutPutDll\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>..\OutPutDll\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="AfterBuild" />
+      </CustomCommands>
+    </CustomCommands>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Wuxingogo.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>true</DelaySign>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Data.Sqlite">
+      <HintPath>..\OutPutDll\Mono.Data.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEditor">
+      <HintPath>..\OutPutDll\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\OutPutDll\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\OutPutDll\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="CodeEditor\XCodeTemplateEditor.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="XExtension\AssetsUtilites.cs" />
+    <Compile Include="XExtension\RecoverEditor.cs" />
+    <Compile Include="XExtension\ScopeUtilites.cs" />
+    <Compile Include="XExtension\QuickToggle.cs" />
+    <Compile Include="XExtension\QuickCreatePrefabs.cs" />
+    <Compile Include="XExtension\XAnimationExtension.cs" />
+    <Compile Include="XExtension\XAssetLoader.cs" />
+    <Compile Include="XExtension\XBaseEditor.cs" />
+    <Compile Include="XExtension\XBaseWindow.cs" />
+    <Compile Include="XExtension\XCreateAssetBundle.cs" />
+    <Compile Include="XExtension\AssetBundleModel.cs" />
+    <Compile Include="XExtension\XEditorSetting.cs" />
+    <Compile Include="XExtension\XFileExtension.cs" />
+    <Compile Include="XExtension\XQucickSetPrefs.cs" />
+    <Compile Include="XExtension\XQuickSetDatabase.cs" />
+    <Compile Include="XExtension\XResources.cs" />
+    <Compile Include="XExtension\XStyles.cs" />
+    <Compile Include="CreateAssets\CreateUnityScript.cs" />
+    <Compile Include="CreateAssets\CreateXBaseEditor.cs" />
+    <Compile Include="CreateAssets\CreateXBaseWindow.cs" />
+    <Compile Include="CreateAssets\CreateXMonoBehaviour.cs" />
+    <Compile Include="XExtension\XAnimatorExtension.cs" />
+    <Compile Include="XExtension\XmlExtensionWindow.cs" />
+    <Compile Include="XExtension\XTomporaryWindow.cs" />
+    <Compile Include="XReflection\XAssemlyWindow.cs" />
+    <Compile Include="XReflection\XPropertiesToSerializables.cs" />
+    <Compile Include="XReflection\XReflectionWindow.cs" />
+    <Compile Include="XReflection\XSerializableExtension.cs" />
+    <Compile Include="CodeEditor\CodeGenerateEditor.cs" />
+    <Compile Include="CodeEditor\CodeReviewEditor.cs" />
+    <Compile Include="CodeEditor\ICodeMember.cs" />
+    <Compile Include="CodeEditor\XCodeClass.cs" />
+    <Compile Include="CodeEditor\XCodeCustomAttribute.cs" />
+    <Compile Include="CodeEditor\XCodeField.cs" />
+    <Compile Include="CodeEditor\XCodeMethod.cs" />
+    <Compile Include="CodeEditor\XCodeObject.cs" />
+    <Compile Include="CodeEditor\XCodeParameter.cs" />
+    <Compile Include="CodeEditor\XCodeProperty.cs" />
+    <Compile Include="CodeEditor\XParameterEditor.cs" />
+    <Compile Include="XExtension\XWebWindow.cs" />
+    <Compile Include="ScriptEditor\XMonoBehaviourEditor.cs" />
+    <Compile Include="ScriptEditor\XScriptObjectEditor.cs" />
+    <Compile Include="XReflection\XFieldWindow.cs" />
+    <Compile Include="XReflection\XMethodWindow.cs" />
+    <Compile Include="XReflection\XPropertyWindow.cs" />
+    <Compile Include="CodeEditor\ICodeExpression.cs" />
+    <Compile Include="XReflection\XCommandTools.cs" />
+    <Compile Include="CodeEditor\XCodeMember.cs" />
+    <Compile Include="CodeEditor\XCodeType.cs" />
+    <Compile Include="CodeEditor\XCodeTypeTemplate.cs" />
+    <Compile Include="CodeEditor\ICodeStatement.cs" />
+    <Compile Include="CodeEditor\XCodeSnippet.cs" />
+    <Compile Include="ScriptEditor\XDisableDrawer.cs" />
+    <Compile Include="ScriptEditor\UnityDictionaryDrawer.cs" />
+    <Compile Include="ScriptEditor\XAttributeDrawer.cs" />
+    <Compile Include="ScriptEditor\EnumFlagDrawer.cs" />
+    <Compile Include="CodeEditor\XCodeEvent.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Wuxingogo.pfx" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <!--- <PostBuildEvent>xcopy $(OutDir)$(TargetFileName) $(SolutionDir)WuxingogoExtension\Editor\ /Y
+</PostBuildEvent> -->
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+</PostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WuxingogoRuntime\WuxingogoRuntime.csproj">
+      <Project>{B02B3AE4-0D8E-4A97-817D-3566203C38B3}</Project>
+      <Name>WuxingogoRuntime</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
